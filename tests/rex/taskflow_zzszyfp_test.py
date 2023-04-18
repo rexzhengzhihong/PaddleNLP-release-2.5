@@ -18,7 +18,11 @@ def zzszyfptest():
 
 
 def zzszyfp_v1():
-    schema = ['开票日期', '名称', '纳税人识别号', '开户行及账号', '金额', '价税合计', 'No', '税率', '地址、电话', '税额']
+    schema = ["购买方名称", "购买方纳税人识别号", "购买方地址电话", "购买方开户行及账号", "合计金额", "合计税额", "价税合计大写", "价税合计小写", "开票人", "开票日期", "发票号",
+              "发票代码", "销售方名称", "销售方纳税人识别号"
+                               "销售方地址电话", "销售方开户行及账号", "项目名称", "单位", "数量", "单价", "金额", "税率", "税额",
+              {"Description": ["单位", "数量", "单价", "金额", "税率", "税额"]}]
+
     my_ie = Taskflow("information_extraction", model="uie-x-base", schema=schema,
                      task_path='/home/DiskA/zncsPython/picture_uie/zzszyfp_v1/checkpoint/model_best', precison='fp16',
                      layout_analysis=True)
